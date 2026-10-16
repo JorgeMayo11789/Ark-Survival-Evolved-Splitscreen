@@ -3,6 +3,9 @@
 build/*
 !build/ArkSplitscreen.ini
 
+# Release zips (uploaded to GitHub Releases instead)
+Releases/
+
 # Logs can contain Steam ids
 *.log
 
