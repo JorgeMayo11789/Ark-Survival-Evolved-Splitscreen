@@ -266,6 +266,16 @@ from the server setting); warns via ClientNotifyListenServerOutOfRange, teleport
 SetActorLocation, handles dinos/rafts/seats. It skips controllers where IsLocalController (vtable +0xAA8, call at
 00F252B8) is true, so P2 would need the same "index>0 = not local" stub as the save-data sites.
 
+## OPEN: dark shadows come back after a death/respawn + far apart (reported 2026-10-16, while recording)
+Repro: P1 killed P2; P2 respawned, then P1 respawned far away -> P2's half had the old very-dark-shadow look.
+Teleporting P2 to P1 moved the dark look over to P1's half (follows the location/view, not the player?).
+The 2 -> 1 -> 2 player-count flips in the log (~19:23) were the user leaving and rejoining as P2 to try to clear
+it -- that did NOT help, even though each rejoin re-applied r.SSS.Scale=0 and the shadow/stencil settings. So it
+isn't our cvar state; the darkness seems tied to the place (it moved to P1 when P2 was teleported to P1's spot).
+Ideas: per-location lighting/shadow data (e.g. distance-field / cached shadow maps, light-attenuation or a streaming
+level's lighting that only one view loaded), or the streaming fix interacting with the respawn. Next time: note the
+map spot, compare RenderDoc captures of the dark vs. normal half. Not fixed yet.
+
 ## OPEN (low priority): "name your dino" prompt after player 2's tame (reported 2026-10-16)
 Opens over player 1's half and takes player 1's input. Possibly the console behaviour too; text entry needs the
 keyboard (player 1) anyway, so maybe leave it. If fixed: find where the tame-naming popup is created and which

@@ -94,6 +94,9 @@ a problem.
 **Known issue:** when player 2 finishes a tame, the "name your dino" box opens on player 1's half and only player
 1 can type in it (name it with player 1's keyboard). The console version reportedly behaves the same way.
 
+**Known issue:** after a player dies and respawns far away from the other, the very dark shadows can come back on
+one half of the screen (and move with that spot if a player teleports there).
+
 **Not tested yet (bug reports welcome):**
 - Maps other than The Island.
 - One player going into a cave while the other stays outside.
