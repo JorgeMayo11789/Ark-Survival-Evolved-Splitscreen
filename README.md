@@ -6,6 +6,10 @@ switches it back on and fixes what breaks.
 
 **Single-player only. Never use it on official or BattlEye-protected servers.**
 
+[![ArkSplitscreen demo video](https://img.youtube.com/vi/w2PaPEHfSZE/maxresdefault.jpg)](https://youtu.be/w2PaPEHfSZE)
+
+*Click the image to watch the demo on YouTube.*
+
 > **How this was made:** all of the code, the reverse engineering and the analysis tools were written by
 > **Claude** (Anthropic's AI model), working in Claude Code. I tested every change in-game and found what needed
 > fixing by playtesting, giving Claude notes on each bug (what happened, when, and screenshots) until it worked.
