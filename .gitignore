@@ -1,0 +1,28 @@
+# Build output: the DLL is published as a GitHub Release, not committed.
+# The default settings file is kept.
+build/*
+!build/ArkSplitscreen.ini
+
+# Logs can contain Steam ids
+*.log
+
+# Data dumped from ARK's own executable (symbols, disassembly) - not ours to publish
+out/
+
+# RenderDoc: a copy of the program and frame captures of the game (huge, contain game assets)
+renderdoc/RenderDoc_*
+captures/
+*.rdc
+
+# Compiler / tool leftovers
+*.obj
+*.pdb
+*.ilk
+*.exp
+__pycache__/
+*.pyc
+
+# Local editor and Claude Code settings
+.vs/
+.vscode/
+.claude/
